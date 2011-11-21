@@ -7,7 +7,7 @@ $this->menu = array(
 $areas_menu = array(
 	// set the all area menu category
 	array(
-		'label' => '全部地區',
+		'label' => Yii::t('jobs', 'All areas'),
 		'url' => array('job/index'),
 	'active' => isset($_GET['aid']) ? false : true, // set to active when select all
 	),
@@ -23,8 +23,8 @@ foreach ($areas as $id => $name) {
 <div id="left-part">
 	<!--buttons start-->
         <div class="buttons">
-		<?php echo CHtml::link(CHtml::image("images/classified/bt-needjob.gif", "我要求職", array('class' => 'img-left')), array('job/create', 'pid' => 2)); ?>
-		<?php echo CHtml::link(CHtml::image("images/classified/bt-needp.gif", "我要請人"), array('job/create', 'pid' => 1)); ?>
+		<?php echo CHtml::link(CHtml::image("images/classified/bt-needjob.gif", Yii::t('jobs', 'I want be employed'), array('class' => 'img-left')), array('job/create', 'pid' => 2)); ?>
+		<?php echo CHtml::link(CHtml::image("images/classified/bt-needp.gif",  Yii::t('jobs', 'I want employ')), array('job/create', 'pid' => 1)); ?>
         </div>	
 	<?php if (isset($this->breadcrumbs)): ?>
 		<?php
@@ -59,10 +59,10 @@ $this->widget('zii.widgets.CListView', array(
 	'template' => "{items}{pager}",
 	'pager' => array(
 		'header' => '', //text before it
-		'firstPageLabel' => '第一页', //overwrite firstPage lable
+		'firstPageLabel' => Yii::t('jobs', 'First page'), //overwrite firstPage lable
 		'lastPageLabel' => '最后一页', //overwrite lastPage lable
-		'nextPageLabel' => '下一頁', //overwrite nextPage lable
-		'prevPageLabel' => '上一頁', //overwrite prePage lable
+		'nextPageLabel' => Yii::t('jobs', 'Next'), //overwrite nextPage lable
+		'prevPageLabel' => Yii::t('jobs', 'Prev'), //overwrite prePage lable
 	),
 ));
 ?>
