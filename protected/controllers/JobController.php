@@ -103,6 +103,9 @@ class JobController extends JController
 	 */
 	public function actionUpdate($id)
 	{
+		if( Job::model()->jobOnwerAuth($id) !== TRUE) {
+			$this->redirect(array('view','id'=>$id));
+		}
 		// set the job list main menu status to active when in the job detail page
 		Yii::app()->params['show_job_main_menu'] = true;
 		$model=$this->loadModel($id);

@@ -152,7 +152,17 @@ class Job extends CActiveRecord
 		return  count($data) ? $data[0]->id : false;
 	}
 
-	public function jobOnwerAuth($id, $psw) {
+	/**
+	 * If the use password is correct, set the session for current job post
+	 * First check if this job is already authorized, if not then query the DB for password
+	 * @param int $id
+	 * @param string $psw
+	 * @return boolean 
+	 */
+	public function jobOnwerAuth($id, $psw = null) {
+		if(Yii::app()->session["auth_pass_$id"] === TRUE) {
+			return TRUE;
+		}
 		if(Yii::app()->request->isPostRequest && isset($_POST['password'])) {
 			// Not direct call, only use ajax
 			$row = $this->findByPk($id);
@@ -160,6 +170,7 @@ class Job extends CActiveRecord
 				return false;
 			}
 			if($row->password == $this->encryptPassword($psw)) {
+				Yii::app()->session["auth_pass_$id"] =  TRUE;
 				return true;
 			}
 		}
