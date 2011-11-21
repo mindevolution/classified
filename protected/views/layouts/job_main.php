@@ -37,7 +37,7 @@
     </div>
 	<!--nav end-->    
 	<?php echo $content; ?>
-</div>
+        </div>	
 <!--wrap end-->
 </body>
 </html>
