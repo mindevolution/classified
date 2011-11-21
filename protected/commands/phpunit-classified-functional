@@ -1,0 +1,8 @@
+#!/bin/bash
+var=`netstat -nan | grep 0:4444`
+if [ !$var ]
+	then 
+		selenium-server&
+fi
+cd /var/www/classified/protected/tests
+phpunit functional/
