@@ -10,6 +10,7 @@
  */
 class Microjob extends CActiveRecord
 {
+	public $verifyCode;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @return Microjob the static model class
@@ -42,6 +43,7 @@ class Microjob extends CActiveRecord
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, description, timestamp', 'safe', 'on'=>'search'),
+		    	array('verifyCode', 'CaptchaExtendedValidator', 'allowEmpty'=>!CCaptcha::checkRequirements()),
 		);
 	}
 

@@ -26,6 +26,12 @@
 		<?php echo $form->textField($model,'timestamp'); ?>
 		<?php echo $form->error($model,'timestamp'); ?>
 	</div>
+	<?php $this->widget('CCaptcha'); ?>
+	<div class="row">
+		<?php echo $form->labelEx($model,'verifyCode'); ?>
+		<?php echo $form->textField($model,'verifyCode'); ?>
+		<?php echo $form->error($model,'verifyCode'); ?>
+	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>

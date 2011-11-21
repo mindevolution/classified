@@ -18,6 +18,14 @@ class MicrojobController extends Controller
 		);
 	}
 
+	public function actions(){
+		return array(
+		    'captcha'=>array(
+			'class'=>'CaptchaExtendedAction',
+		    ),
+		);
+	}
+
 	/**
 	 * Specifies the access control rules.
 	 * This method is used by the 'accessControl' filter.
@@ -27,7 +35,7 @@ class MicrojobController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view', 'captcha'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
