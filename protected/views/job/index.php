@@ -69,46 +69,10 @@ foreach ($areas as $id => $name) {
 
         <!--day-lists end-->
         <!--job-ads start-->
-        <div class="job-ads">
-		<div class="arrow-left"><a href="#">&nbsp;</a></div>
-		<p><a href="#"><img src="images/classified/bn-job1.gif" alt="易登網" /></a></p>
-		<p><img src="images/classified/bn-job-model.gif" alt="job-ad" /></p>
-		<p><img src="images/classified/bn-job-model.gif" alt="job-ad" /></p>
-		<p><img src="images/classified/bn-job-model.gif" alt="job-ad" /></p>
-		<div class="arrow-right"><a href="#">&nbsp;</a></div>
-		<div style="clear:both;"></div>
-        </div>	
+	<?php echo $this->renderPartial('_ads'); ?>
         <!--job-ads end-->
         <!--chongdian start-->
-        <div class="chongdian">
-		<div class="menu">
-			<div class="right"><img src="images/classified/bn-chongdian.gif" /></div>
-			<a href="#">職場充電</a>
-		</div>
-		<ul>
-			<li><a href="#">雙贏的溝通技巧</a> <img src="images/classified/icon-photo.gif" alt="photo" /></li>
-			<li><a href="#">影響式溝通技巧</a> <img src="images/classified/icon-photo.gif" alt="photo" /></li>
-			<li><a href="#">人際風格與有效溝通技巧訓練</a> <img src="images/classified/icon-photo.gif" alt="photo" /></li>
-			<li><a href="#">高效的管理溝通技巧</a> <img src="images/classified/icon-photo.gif" alt="photo" /></li>
-			<li><a href="#">客戶心理學和客戶溝通技巧</a> <img src="images/classified/icon-photo.gif" alt="photo" /></li>
-			<li><a href="#">影響式溝通技巧</a> <img src="images/classified/icon-photo.gif" alt="photo" /></li>
-			<li><a href="#">人際風格與有效溝通技巧訓練</a> <img src="images/classified/icon-photo.gif" alt="photo" /></li>
-			<li><a href="#">高效的管理溝通技巧</a> <img src="images/classified/icon-photo.gif" alt="photo" /></li>
-			<li><a href="#">客戶心理學和客戶溝通技巧</a> <img src="images/classified/icon-photo.gif" alt="photo" /></li>
-		</ul>
-		<ul class="ul-border">
-			<li><a href="#">雙贏的溝通技巧</a> <img src="images/classified/icon-photo.gif" alt="photo" /></li>
-			<li><a href="#">影響式溝通技巧</a> <img src="images/classified/icon-photo.gif" alt="photo" /></li>
-			<li><a href="#">人際風格與有效溝通技巧訓練</a> <img src="images/classified/icon-photo.gif" alt="photo" /></li>
-			<li><a href="#">高效的管理溝通技巧</a> <img src="images/classified/icon-photo.gif" alt="photo" /></li>
-			<li><a href="#">客戶心理學和客戶溝通技巧</a> <img src="images/classified/icon-photo.gif" alt="photo" /></li>
-			<li><a href="#">影響式溝通技巧</a> <img src="images/classified/icon-photo.gif" alt="photo" /></li>
-			<li><a href="#">人際風格與有效溝通技巧訓練</a> <img src="images/classified/icon-photo.gif" alt="photo" /></li>
-			<li><a href="#">高效的管理溝通技巧</a> <img src="images/classified/icon-photo.gif" alt="photo" /></li>
-			<li><a href="#">客戶心理學和客戶溝通技巧</a> <img src="images/classified/icon-photo.gif" alt="photo" /></li>
-		</ul>
-		<div class="clear"></div>
-        </div>
+	<?php echo $this->renderPartial('_recharge'); ?>
         <!--chongdian end-->
 </div>
 <!--left-part end-->
@@ -127,23 +91,7 @@ foreach ($areas as $id => $name) {
 			<dd>"你必须给我加薪！"一个人对他的老板说，"现在有三家公司找我呢。""是吗？"老板问他，"是哪三家公司找你？""电力...<span class="green12"><a href="#">查看詳細</a></span></dd>
 		</dl>
         </div>
-        <div class="job-board">
-		<div class="menu-r">
-			<div class="more"><a href="#">&nbsp;</a></div>
-			<a href="#">工作即時貼</a>
-		</div>
-		<p><a href="#">曼哈頓中城旺店請手法按摩好年輕按摩師一名另招學員學成留店請電718-503-4797</a></p>
-		<p><a href="#">曼哈頓中城旺店請手法按摩好年輕按摩師一名另招學員學成留店請電718-503-4797</a></p>
-		<p><a href="#">曼哈頓中城旺店請手法按摩好年輕按摩師一名另招學員學成留店請電718-503-4797</a></p>
-		<textarea class="textarea">一句話找工作</textarea>
-		<input type="text" value="請輸入驗證碼" class="input-form" />
-		<div class="code"><img src="images/classified/code.gif" alt="驗證碼" /></div>
-		<div class="clear"></div>
-		<div class="bt-send"><input type="image" src="images/classified/bt-fabu.gif" name="即時發佈信息" /></div>
-        </div>
-        <div>
-		<img src="images/classified/ad.gif" width="300" height="250" alt="ad" />
-        </div>
+	<?php echo $this->renderPartial('right/job_board'); ?>
 	<?php echo $this->renderPartial('right/interactive_and_info'); ?>
 </div>
 <!--right-part end-->
