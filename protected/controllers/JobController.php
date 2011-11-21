@@ -61,7 +61,6 @@ class JobController extends JController
 		$prevJob = ($prevId = Job::model()->getPrevId($id))?$this->loadModel($prevId):false;
 
 		$messages = '';
-//		var_dump(Yii::app()->user->getFlashes());
 		foreach(Yii::app()->user->getFlashes() as $key => $message) {
 			if($key != 'lastjob_day') {
 				$messages .= '<div class="flash-' . $key . '">' . $message . "</div>\n";
