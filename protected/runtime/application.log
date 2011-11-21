@@ -6135,3 +6135,9 @@ Stack trace:
 #19 /var/www/yii/framework/base/CApplication.php(158): CWebApplication->processRequest()
 #20 /var/www/classified/index.php(13): CApplication->run()
 #21 {main} REQUEST_URI=/classified/index.php?r=job/index
+2011/11/21 14:07:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gcc".' in /var/www/yii/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(136): CWebApplication->runController('gcc')
+#1 /var/www/yii/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /var/www/classified/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/classified/index.php?r=gcc
