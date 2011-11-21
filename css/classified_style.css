@@ -147,7 +147,7 @@ h2{ font-size:18px; color:#fff; padding-bottom:5px;}
 .form-button{ border-top:1px solid #f0f0f0; padding-top:20px; margin-bottom:20px;}
 .form-button .bt-left{ padding-left:227px;}
 
-.post-ok{ background:#b0be36; padding:7px 0 7px 265px; color:#fff; margin-bottom:20px;}
+.post-ok, .flash-success{ background:#b0be36; padding:7px 0 7px 265px; color:#fff; margin-bottom:20px;}
 .post-re, .errorSummary{ background:#ff9900; padding:7px 0 7px 165px; color:#fff; margin-bottom:20px;}
 .post-re a{ color:#fff; text-decoration:underline;}
 .post-re .an-y{ padding-right:50px;}

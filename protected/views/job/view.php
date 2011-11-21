@@ -5,9 +5,7 @@ $this->breadcrumbs = array(
 );
 ?>
 <?php if($messages): ?>
-<div class="post-re">
-	<h2><?php echo $messages; ?></h2>
-</div>
+	<?php echo $messages; ?>
 <?php endif; ?>
 <!--detail start-->
 <div class="detail">

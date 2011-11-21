@@ -29,7 +29,7 @@ class JobController extends JController
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view', 'create', 'auth', 'authEdit'),
+				'actions'=>array('index','view', 'create', 'auth', 'authEdit', 'update'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -126,8 +126,10 @@ class JobController extends JController
 		if(isset($_POST['Job']))
 		{
 			$model->attributes=$_POST['Job'];
-			if($model->save())
+			if($model->save()) {
+				Yii::app()->user->setFlash('success', "修改成功！");
 				$this->redirect(array('view','id'=>$model->id));
+			}
 		}
 
 		$this->render('update',array(
