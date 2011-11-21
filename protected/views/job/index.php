@@ -78,9 +78,9 @@ $this->widget('zii.widgets.CListView', array(
 <!--left-part end-->
 <!--right-part start-->
 <div id="right-part">
-	<?php echo $this->renderPartial('_tag_cloud'); ?>
-	<?php echo $this->renderPartial('_job_joy'); ?>
-	<?php echo $this->renderPartial('right/job_board'); ?>
-	<?php echo $this->renderPartial('right/interactive_and_info'); ?>
+	<?php echo $this->renderPartial('right/_tag_cloud'); ?>
+	<?php echo $this->renderPartial('right/_job_joy'); ?>
+	<?php echo $this->renderPartial('right/_job_board'); ?>
+	<?php echo $this->renderPartial('right/_interactive_and_info'); ?>
 </div>
 <!--right-part end-->
