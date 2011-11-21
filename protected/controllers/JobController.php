@@ -60,10 +60,18 @@ class JobController extends JController
 		// if previous job id exists then load the previous job or set the previous job to false
 		$prevJob = ($prevId = Job::model()->getPrevId($id))?$this->loadModel($prevId):false;
 
+		$messages = '';
+//		var_dump(Yii::app()->user->getFlashes());
+		foreach(Yii::app()->user->getFlashes() as $key => $message) {
+			if($key != 'lastjob_day') {
+				$messages .= '<div class="flash-' . $key . '">' . $message . "</div>\n";
+			}
+		}
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 			'nextJob'=>$nextJob,
 			'prevJob'=>$prevJob,
+		    	'messages'=>$messages,
 		));
 	}
 
@@ -104,6 +112,9 @@ class JobController extends JController
 	public function actionUpdate($id)
 	{
 		if( Job::model()->jobOnwerAuth($id) !== TRUE) {
+			if(!Yii::app()->user->hasFlash('Warning')) {
+				Yii::app()->user->setFlash('Warning', "請正確輸入管理密碼！");
+			}
 			$this->redirect(array('view','id'=>$id));
 		}
 		// set the job list main menu status to active when in the job detail page

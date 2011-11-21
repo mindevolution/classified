@@ -4,6 +4,11 @@ $this->breadcrumbs = array(
 	'詳細信息',
 );
 ?>
+<?php if($messages): ?>
+<div class="post-re">
+	<h2><?php echo $messages; ?></h2>
+</div>
+<?php endif; ?>
 <!--detail start-->
 <div class="detail">
 	<h1 class="d-title"><?php echo $model->title; ?> </h1>
