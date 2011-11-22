@@ -10,7 +10,7 @@ $form = $this->beginWidget('CActiveForm', array(
 ?>
 
 	<?php echo $form->textarea($model, 'description', array(
-	    'value' => Yii::t('jobs', Yii::t('jobs','One word to find job')),
+	    'alt' => Yii::t('jobs', Yii::t('jobs','One word to find job')),
 		    'class' => 'textarea',
 	),array()); ?>
 	<?php echo $form->error($model, 'description'); ?>

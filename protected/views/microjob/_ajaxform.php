@@ -8,7 +8,7 @@
 )); ?>
 
 		<?php echo $form->textarea($model, 'description', array(
-		    'value' => '一句話找工作',
+	    	'alt' => Yii::t('jobs', Yii::t('jobs','One word to find job')),
 		    'class' => 'textarea',
 		),array()); ?>
 		<?php
