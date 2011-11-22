@@ -10,6 +10,14 @@ class JobController extends JController
 
 	const OTHERADMIN_UID = 2;
 
+	public function __construct($id, $module = null) {
+		parent::__construct($id, $module);
+		$baseUrl = Yii::app()->baseUrl; 
+		$cs = Yii::app()->getClientScript();
+		$cs->registerCssFile($baseUrl.'/css/classified_style.css');
+		$cs->registerScriptFile($baseUrl.'/js/classified.js');
+	}
+
 	/**
 	 * @return array action filters
 	 */
