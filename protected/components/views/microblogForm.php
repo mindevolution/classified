@@ -11,10 +11,10 @@ $form = $this->beginWidget('CActiveForm', array(
 
 <?php echo $form->errorSummary($model); ?>
 	<?php echo $form->textarea($model, 'description', array(
-	    'value' => '一句話找工作',
+	    'value' => Yii::t('jobs', Yii::t('jobs','One word to find job')),
 	),array()); ?>
 	<?php echo $form->error($model, 'description'); ?>
-	<?php echo $form->textField($model, 'verifyCode', array('size' => 60, 'class' => 'input-form', 'value'=>'請輸入驗證碼', 'maxlength' => 255)); ?>
+	<?php echo $form->textField($model, 'verifyCode', array('size' => 60, 'class' => 'input-form', 'value'=>Yii::t('jobs', 'Input verify code'), 'maxlength' => 255)); ?>
 	<?php echo $form->error($model, 'verifyCode'); ?>
 	<div class="code">
 		<?php $mc = new MicrojobController('microjob'); ?>
