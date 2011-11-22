@@ -94,6 +94,7 @@ h2{ font-size:18px; color:#fff; padding-bottom:5px;}
 .job-board .textarea{ width:269px; padding:2px 5px; height:55px; border:none; border-top:1px solid #b8deea; border-left:1px solid #b8deea; background:#fff; font-size:12px; line-height:18px; color:#333; margin-top:10px;}
 .job-board .input-form{ width:140px; height:28px; padding-left:5px; line-height:28px;border-top:1px solid #b8deea; border-left:1px solid #b8deea; float:left; margin-top:10px;}
 .job-board .code{ float:right; margin-top:5px;}
+.job-board .code a{ display: none;}
 .job-board .bt-send{ margin-top:10px; text-align:center; }
 .hudong{width:280px; padding-left:10px; }
 .hudong p{font-size:12px;}
