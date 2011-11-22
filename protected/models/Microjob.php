@@ -66,7 +66,7 @@ class Microjob extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'description' => 'Description',
+			'description' => Yii::t('jobs', 'Description'),
 			'timestamp' => 'Timestamp',
 		);
 	}
