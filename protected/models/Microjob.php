@@ -39,6 +39,7 @@ class Microjob extends CActiveRecord
 			array('id', 'required'),
 			array('id', 'numerical', 'integerOnly'=>true),
 			array('description', 'length', 'max'=>245),
+			array('description', 'required'),
 			array('timestamp', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
