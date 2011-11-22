@@ -32,7 +32,7 @@ $form = $this->beginWidget('CActiveForm', array(
 //                                            alert(\'beforeSend\');
 				}',
 				'success'=>'js:function(data){
-				    	$("#targetdiv").html(data+'.$form->errorSummary($model).'
+				    	$("#targetdiv").html(data
 				);
 				}',
 				'complete'=>'js:function(){
