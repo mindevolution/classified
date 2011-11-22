@@ -93,9 +93,12 @@ h2{ font-size:18px; color:#fff; padding-bottom:5px;}
 .job-board p{ background:#fff; padding:5px 7px; font-size:12px; margin-bottom:2px; line-height:18px;}
 .job-board .textarea{ width:269px; padding:2px 5px; height:55px; border:none; border-top:1px solid #b8deea; border-left:1px solid #b8deea; background:#fff; font-size:12px; line-height:18px; color:#333; margin-top:10px;}
 .job-board .input-form{ width:140px; height:28px; padding-left:5px; line-height:28px;border-top:1px solid #b8deea; border-left:1px solid #b8deea; float:left; margin-top:10px;}
+.job-board .textarea.error, .job-board .input-form.error {border: 1px solid red;}
 .job-board .code{ float:right; margin-top:5px;}
+.job-board .code img{ width: 128px; height: 35px;}
 .job-board .code a{ display: none;}
 .job-board .bt-send{ margin-top:10px; text-align:center; }
+.job-board .bt-send input{ text-indent: -10000px; width: 133px; height: 29px; overflow: hidden; background: url(../images/classified/bt-fabu.gif) no-repeat; border: none; cursor: pointer;}
 .hudong{width:280px; padding-left:10px; }
 .hudong p{font-size:12px;}
 .hudong .hd-group{ border-bottom:1px dotted #9ad0e1; padding:7px 0;}
@@ -152,3 +155,4 @@ h2{ font-size:18px; color:#fff; padding-bottom:5px;}
 .post-re, .errorSummary{ background:#ff9900; padding:7px 0 7px 165px; color:#fff; margin-bottom:20px;}
 .post-re a{ color:#fff; text-decoration:underline;}
 .post-re .an-y{ padding-right:50px;}
+
