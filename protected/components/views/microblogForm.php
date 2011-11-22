@@ -9,9 +9,9 @@ $form = $this->beginWidget('CActiveForm', array(
 	));
 ?>
 
-<?php echo $form->errorSummary($model); ?>
 	<?php echo $form->textarea($model, 'description', array(
 	    'value' => Yii::t('jobs', Yii::t('jobs','One word to find job')),
+		    'class' => 'textarea',
 	),array()); ?>
 	<?php echo $form->error($model, 'description'); ?>
 	<?php echo $form->textField($model, 'verifyCode', array('size' => 60, 'class' => 'input-form', 'value'=>Yii::t('jobs', 'Input verify code'), 'maxlength' => 255)); ?>

@@ -9,6 +9,7 @@
 
 		<?php echo $form->textarea($model, 'description', array(
 		    'value' => '一句話找工作',
+		    'class' => 'textarea',
 		),array()); ?>
 		<?php
 		//echo $form->error($model, 'description');
