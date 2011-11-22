@@ -14,7 +14,9 @@ $form = $this->beginWidget('CActiveForm', array(
 		    'class' => 'textarea',
 	),array()); ?>
 	<?php echo $form->error($model, 'description'); ?>
-	<?php echo $form->textField($model, 'verifyCode', array('size' => 60, 'class' => 'input-form', 'value'=>Yii::t('jobs', 'Input verify code'), 'maxlength' => 255)); ?>
+	<?php echo $form->textField($model, 'verifyCode', array('size' => 60, 'class' => 'input-form', 'value'=>Yii::t('jobs', 'Input verify code'), 
+	    'alt' => Yii::t('jobs', 'Input verify code'),
+	    'maxlength' => 255)); ?>
 	<?php echo $form->error($model, 'verifyCode'); ?>
 	<div class="code">
 		<?php $mc = new MicrojobController('microjob'); ?>

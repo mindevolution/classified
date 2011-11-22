@@ -14,7 +14,9 @@
 		<?php
 		//echo $form->error($model, 'description');
 		?>
-	<?php echo $form->textField($model, 'verifyCode', array('size' => 60, 'class' => 'input-form',  'maxlength' => 255)); ?>
+	<?php echo $form->textField($model, 'verifyCode', array('size' => 60, 'class' => 'input-form', 
+	    'alt' => Yii::t('jobs', 'Input verify code'),
+	    'maxlength' => 255)); ?>
 	<div class="code">
 		<?php $this->widget('CCaptcha'); ?> 
 	</div>
