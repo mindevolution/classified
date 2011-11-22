@@ -4,4 +4,9 @@ $(document).ready(function() {
 		if($(this).val() == $(this).attr('alt')) 
 			$(this).val('');
 	});
+	$('#Microjob_verifyCode').blur(function() {
+		if($(this).val() == '') 
+			$(this).val($(this).attr('alt'));
+			
+	});
 })
