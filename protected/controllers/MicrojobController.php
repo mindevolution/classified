@@ -88,25 +88,22 @@ class MicrojobController extends Controller
 
 	public function actionAjaxCreate()
 	{
-		echo "Ajax create action";
-		$model=new Microjob;
+		 $model=new Microjob;
 
 		// Uncomment the following line if AJAX validation is needed
-		 $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
-		if(isset($_POST['Microjob']) && Yii::app()->request->isAjaxRequest)
+		if(isset($_POST['Microjob']))
 		{
-			var_dump($_POST);
 			$model->attributes=$_POST['Microjob'];
-			$result = $model->save();
-			var_dump($result);
-			if($result) {
-				echo "success";
-			} else {
-				echo false;
+			if($model->save()) {
+				$this->redirect(array('view','id'=>$model->id));
 			}
-			
 		}
+
+		$this->renderPartial('ajaxCreate',array(
+			'model'=>$model,
+		));
 	}
 
 	/**

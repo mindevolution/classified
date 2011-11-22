@@ -36,7 +36,7 @@ class Microjob extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id', 'required'),
+//			array('id', 'required'),
 			array('id', 'numerical', 'integerOnly'=>true),
 			array('description', 'length', 'max'=>245),
 			array('description', 'required'),
