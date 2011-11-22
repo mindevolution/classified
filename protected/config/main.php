@@ -6,7 +6,7 @@
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
 return array(
-    	'language' => 'cn_hant_tw',
+    	'language' => 'zh_tw',
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Yibada Jobs',
 
