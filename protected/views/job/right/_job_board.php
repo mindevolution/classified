@@ -9,20 +9,25 @@
 	
 	<?php
 	$form = $this->beginWidget('CActiveForm', array(
-		'id' => 'job-form',
-		'enableAjaxValidation' => false,
+		'id' => 'micro-job-form',
+		'enableAjaxValidation' => true,
 		));
 	?>
 
 	<?php echo $form->errorSummary($model); ?>
-		<textarea class="textarea">一句話找工作</textarea>
-		<input type="text" value="請輸入驗證碼" class="input-form" />
+		<?php echo $form->textarea($model, 'description', array(
+		    'value' => '一句話找工作',
+		),array()); ?>
+		<?php echo $form->textField($model, 'verifyCode', array('size' => 60, 'class' => 'input-form', 'value'=>'請輸入驗證碼', 'maxlength' => 255)); ?>
 		<div class="code">
 			<?php $mc = new MicrojobController('microjob'); ?>
 			<?php $mc->widget('CCaptcha'); ?>
 		</div>
 		<div class="clear"></div>
-		<div class="bt-send"><input type="image" src="images/classified/bt-fabu.gif" name="即時發佈信息" /></div>
+		<div class="bt-send">
+			<?php echo CHtml::ajaxSubmitButton('submit', $this->createUrl('/microjob/ajaxCreate'), array('update'=>'#targetdiv'));?>
+		</div>
+		<div id="targetdiv"></div>
 	<?php $this->endWidget(); ?>
 </div>
 <div>

@@ -35,7 +35,7 @@ class MicrojobController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view', 'captcha'),
+				'actions'=>array('index','view', 'captcha', 'ajaxCreate'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -84,6 +84,26 @@ class MicrojobController extends Controller
 		$this->render('create',array(
 			'model'=>$model,
 		));
+	}
+
+	public function actionAjaxCreate()
+	{
+		echo "Ajax create action";
+		$model=new Microjob;
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['Microjob']))
+		{
+			$model->attributes=$_POST['Microjob'];
+			if($model->save()) {
+				echo "success";
+			} else {
+				echo false;
+			}
+			
+		}
 	}
 
 	/**
