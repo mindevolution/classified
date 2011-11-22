@@ -89,7 +89,7 @@ class JobController extends JController
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Job']))
+		if(isset($_POST['Job']) && !Yii::app()->request->isAjaxRequest)
 		{
 			$_POST['Job']['timestamp'] = date( 'Y-m-d H:i:s');
 			$_POST['Job']['password'] = md5($_POST['Job']['password']);

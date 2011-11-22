@@ -4,7 +4,7 @@ define('AREA_ID_HUANGHOU', 2);
 <?php
 $form = $this->beginWidget('CActiveForm', array(
 	'id' => 'job-form',
-	'enableAjaxValidation' => true,
+	'enableAjaxValidation' => false,
 	));
 ?>
 
