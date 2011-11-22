@@ -233,6 +233,7 @@ class JobController extends JController
 			'dataProvider' => $dataProvider,
 			'areas' => Area::getAreasByPid(0),
 			'pageSize' => $page_size,
+		    	'microjob' => new Microjob,
 		));
 	}
 

@@ -6,11 +6,24 @@
 	<p><a href="#">曼哈頓中城旺店請手法按摩好年輕按摩師一名另招學員學成留店請電718-503-4797</a></p>
 	<p><a href="#">曼哈頓中城旺店請手法按摩好年輕按摩師一名另招學員學成留店請電718-503-4797</a></p>
 	<p><a href="#">曼哈頓中城旺店請手法按摩好年輕按摩師一名另招學員學成留店請電718-503-4797</a></p>
-	<textarea class="textarea">一句話找工作</textarea>
-	<input type="text" value="請輸入驗證碼" class="input-form" />
-	<div class="code"><img src="images/classified/code.gif" alt="驗證碼" /></div>
-	<div class="clear"></div>
-	<div class="bt-send"><input type="image" src="images/classified/bt-fabu.gif" name="即時發佈信息" /></div>
+	
+	<?php
+	$form = $this->beginWidget('CActiveForm', array(
+		'id' => 'job-form',
+		'enableAjaxValidation' => false,
+		));
+	?>
+
+	<?php echo $form->errorSummary($model); ?>
+		<textarea class="textarea">一句話找工作</textarea>
+		<input type="text" value="請輸入驗證碼" class="input-form" />
+		<div class="code">
+			<?php $mc = new MicrojobController('microjob'); ?>
+			<?php $mc->widget('CCaptcha'); ?>
+		</div>
+		<div class="clear"></div>
+		<div class="bt-send"><input type="image" src="images/classified/bt-fabu.gif" name="即時發佈信息" /></div>
+	<?php $this->endWidget(); ?>
 </div>
 <div>
 	<img src="images/classified/ad.gif" width="300" height="250" alt="ad" />
