@@ -94,8 +94,10 @@ class JobController extends JController
 			$_POST['Job']['timestamp'] = date( 'Y-m-d H:i:s');
 			$_POST['Job']['password'] = md5($_POST['Job']['password']);
 			$model->attributes=$_POST['Job'];
-			if($model->save())
+			if($model->save()) {
+				Yii::app()->user->setFlash('Success', "創建成功!");
 				$this->redirect(array('view','id'=>$model->id));
+			}
 		}
 
 		$this->render('create',array(
