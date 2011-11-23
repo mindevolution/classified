@@ -75,6 +75,10 @@ class JobController extends JController
 			}
 		}
 
+		// Fetch the area data
+		$areas = Area::getAreasByPid(Area::PID_ROOT);
+		$areas_menu = Area::getAreasMenu($areas);
+
 		// get the related jobs
 		$page_size = 10;
 		$criteria = new CDbCriteria;
@@ -104,10 +108,7 @@ class JobController extends JController
 		    	'messages'=>$messages,
 
 			'dataProvider' => $dataProvider,
-			'areas' => Area::getAreasByPid(0),
-			'pageSize' => $page_size,
-		    	'microjob' => new Microjob,
-		    	'list' => $microjobs,
+		    	'areas_menu' => $areas_menu,
 		));
 	}
 
@@ -279,7 +280,6 @@ class JobController extends JController
 
 		$this->render('index', array(
 			'dataProvider' => $dataProvider,
-			'pageSize' => $page_size,
 		    	'microjob' => new Microjob,
 		    	'list' => $microjobs,
 		    	'areas_menu' => $areas_menu,

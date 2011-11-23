@@ -1,18 +1,5 @@
 <?php
-$areas_menu = array(
-	// set the all area menu category
-	array(
-		'label' => Yii::t('jobs', 'All areas'),
-		'url' => array('job/index'),
-	'active' => isset($_GET['aid']) ? false : true, // set to active when select all
-	),
-);
-foreach ($areas as $id => $name) {
-	$areas_menu[] = array(
-		'label' => $name,
-	    'url' => array('job/index/', 'aid' => $id),
-	);
-}
+
 ?>
 <!--left-part start-->
 <div id="left-part">

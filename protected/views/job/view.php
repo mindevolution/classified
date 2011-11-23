@@ -66,7 +66,33 @@ $this->breadcrumbs = array(
 			<img src="images/share.gif" />
 		</div>
 	</div>
-
+	<div class="area">
+		<?php
+		// display the area filter menu
+		$this->beginWidget('zii.widgets.CPortlet', array(
+		));
+		$this->widget('zii.widgets.CMenu', array(
+			'items' => $areas_menu,
+			'htmlOptions' => array('class' => 'select-area'),
+		));
+		$this->endWidget();
+		?>
+		<div style="clear:both;"></div>
+	</div>
+	<?php
+	$this->widget('zii.widgets.CListView', array(
+		'dataProvider' => $dataProvider,
+		'itemView' => '_view',
+		'template' => "{items}{pager}",
+		'pager' => array(
+			'header' => '', //text before it
+			'firstPageLabel' => Yii::t('jobs', 'First page'), //overwrite firstPage lable
+			'lastPageLabel' => '最后一页', //overwrite lastPage lable
+			'nextPageLabel' => Yii::t('jobs', 'Next'), //overwrite nextPage lable
+			'prevPageLabel' => Yii::t('jobs', 'Prev'), //overwrite prePage lable
+		),
+	));
+	?>
 </div>
 
 <div id="right-part">
