@@ -69,18 +69,18 @@ $this->widget('zii.widgets.CListView', array(
 
         <!--day-lists end-->
         <!--job-ads start-->
-	<?php echo $this->renderPartial('_ads'); ?>
+	<?php echo $this->renderPartial('../jobInclude/_ads'); ?>
         <!--job-ads end-->
         <!--chongdian start-->
-	<?php echo $this->renderPartial('_recharge'); ?>
+	<?php echo $this->renderPartial('../jobInclude/_recharge'); ?>
         <!--chongdian end-->
 </div>
 <!--left-part end-->
 <!--right-part start-->
 <div id="right-part">
-	<?php echo $this->renderPartial('right/_tag_cloud'); ?>
-	<?php echo $this->renderPartial('right/_job_joy'); ?>
-	<?php echo $this->renderPartial('right/_job_board', array('model'=>$microjob, 'list' => $list)); ?>
-	<?php echo $this->renderPartial('right/_interactive_and_info'); ?>
+	<?php echo $this->renderPartial('../jobInclude/right/_tag_cloud'); ?>
+	<?php echo $this->renderPartial('../jobInclude/right/_job_joy'); ?>
+	<?php echo $this->renderPartial('../jobInclude/right/_job_board', array('model'=>$microjob, 'list' => $list)); ?>
+	<?php echo $this->renderPartial('../jobInclude/right/_interactive_and_info'); ?>
 </div>
 <!--right-part end-->
