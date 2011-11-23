@@ -1,19 +1,19 @@
 <?php
 
 /**
- * This is the model class for table "classified_information".
+ * This is the model class for table "classified_jobsnews".
  *
- * The followings are the available columns in table 'classified_information':
+ * The followings are the available columns in table 'classified_jobsnews':
  * @property integer $id
  * @property string $title
  * @property string $description
  * @property string $timestamp
  */
-class Information extends CActiveRecord
+class Jobsnews extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
-	 * @return Information the static model class
+	 * @return Jobsnews the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -25,7 +25,7 @@ class Information extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'classified_information';
+		return 'classified_jobsnews';
 	}
 
 	/**
@@ -36,8 +36,9 @@ class Information extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+			array('timestamp', 'required'),
 			array('title', 'length', 'max'=>45),
-			array('description, timestamp', 'safe'),
+			array('description', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, title, description, timestamp', 'safe', 'on'=>'search'),

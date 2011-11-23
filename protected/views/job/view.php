@@ -98,7 +98,9 @@ $this->breadcrumbs = array(
 <div id="right-part">
 	<?php echo $this->renderPartial('../jobInclude/right/_tag_cloud'); ?>
 	<?php echo $this->renderPartial('../jobInclude/right/_job_joy'); ?>
-	<?php echo $this->renderPartial('../jobInclude/right/_interactive_and_info'); ?>
+	<?php echo $this->renderPartial('../jobInclude/right/_interactive'); ?>
+	<div class="bn-ad"><a href="#"><img src="images/classified/bn-go.gif" alt="到此一逛，總有驚喜！" /></a></div>
+	<?php echo $this->renderPartial('../jobInclude/right/_information'); ?>
 </div>
 
 <?php

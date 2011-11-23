@@ -1,6 +1,6 @@
 <?php
 
-class InformationController extends Controller
+class JobsnewsController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -61,14 +61,14 @@ class InformationController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Information;
+		$model=new Jobsnews;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Information']))
+		if(isset($_POST['Jobsnews']))
 		{
-			$model->attributes=$_POST['Information'];
+			$model->attributes=$_POST['Jobsnews'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -90,9 +90,9 @@ class InformationController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Information']))
+		if(isset($_POST['Jobsnews']))
 		{
-			$model->attributes=$_POST['Information'];
+			$model->attributes=$_POST['Jobsnews'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -127,7 +127,7 @@ class InformationController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Information');
+		$dataProvider=new CActiveDataProvider('Jobsnews');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -138,10 +138,10 @@ class InformationController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Information('search');
+		$model=new Jobsnews('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Information']))
-			$model->attributes=$_GET['Information'];
+		if(isset($_GET['Jobsnews']))
+			$model->attributes=$_GET['Jobsnews'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -155,7 +155,7 @@ class InformationController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Information::model()->findByPk($id);
+		$model=Jobsnews::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -167,7 +167,7 @@ class InformationController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='information-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='jobsnews-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

@@ -62,7 +62,9 @@ $this->widget('zii.widgets.CListView', array(
 <div id="right-part">
 	<?php echo $this->renderPartial('../jobInclude/right/_tag_cloud'); ?>
 	<?php echo $this->renderPartial('../jobInclude/right/_job_joy'); ?>
-	<?php echo $this->renderPartial('../jobInclude/right/_job_board', array('model'=>$microjob, 'list' => $list)); ?>
-	<?php echo $this->renderPartial('../jobInclude/right/_interactive_and_info'); ?>
+	<?php echo $this->renderPartial('../jobInclude/right/_job_board', array('list' => $list)); ?>
+	<?php echo $this->renderPartial('../jobInclude/right/_interactive'); ?>
+	<div class="bn-ad"><a href="#"><img src="images/classified/bn-go.gif" alt="到此一逛，總有驚喜！" /></a></div>
+	<?php echo $this->renderPartial('../jobInclude/right/_jobsnews', array('infors' => $jobsnews)); ?>
 </div>
 <!--right-part end-->

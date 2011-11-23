@@ -1,15 +1,15 @@
 <?php
 $this->breadcrumbs=array(
-	'Informations',
+	'Jobsnews',
 );
 
 $this->menu=array(
-	array('label'=>'Create Information', 'url'=>array('create')),
-	array('label'=>'Manage Information', 'url'=>array('admin')),
+	array('label'=>'Create Jobsnews', 'url'=>array('create')),
+	array('label'=>'Manage Jobsnews', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Informations</h1>
+<h1>Jobsnews</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

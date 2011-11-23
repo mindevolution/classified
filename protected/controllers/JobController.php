@@ -278,11 +278,18 @@ class JobController extends JController
 			'limit'=>3,
 		));
 
+		// Fetch the micro job list
+		$job_information = Jobsnews::model()->findAll(array(
+			'order' => 'id desc',
+			'limit'=>4,
+		));
+
 		$this->render('index', array(
 			'dataProvider' => $dataProvider,
 		    	'microjob' => new Microjob,
 		    	'list' => $microjobs,
 		    	'areas_menu' => $areas_menu,
+		    	'jobsnews' => $job_information,
 		));
 	}
 
