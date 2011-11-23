@@ -6,7 +6,15 @@ class MicrojobController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='//layouts/job';
+
+	public function __construct($id, $module = null) {
+		parent::__construct($id, $module);
+		$baseUrl = Yii::app()->baseUrl; 
+		$cs = Yii::app()->getClientScript();
+		$cs->registerCssFile($baseUrl.'/css/classified_style.css');
+		$cs->registerScriptFile($baseUrl.'/js/classified.js');
+	}
 
 	/**
 	 * @return array action filters
