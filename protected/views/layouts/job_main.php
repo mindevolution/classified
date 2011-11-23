@@ -21,9 +21,15 @@
 		if(isset(Yii::app()->params['show_job_main_menu'])) {
 			$menu_job_main['active'] = true;
 		}
+
+		$menu_microjob = array('label'=>Yii::t('jobs', 'Micro jobs'), 'url'=>array('/microjob/index'), );
+		if(isset(Yii::app()->params['show_micro_jobs_menu'])) {
+			$menu_microjob['active'] = true;
+		}
 		$this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				$menu_job_main,
+				$menu_microjob,
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
