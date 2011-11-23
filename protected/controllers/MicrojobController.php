@@ -66,6 +66,8 @@ class MicrojobController extends Controller
 	 */
 	public function actionView($id)
 	{
+		// set the job list main menu status to active when in the job detail page
+		Yii::app()->params['show_micro_jobs_menu'] = true;
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -169,7 +171,17 @@ class MicrojobController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Microjob');
+		$page_size = 10;
+		$dataProvider=new CActiveDataProvider('Microjob',
+			array(
+					'criteria' => array(
+						'order' => 'id DESC',
+					),
+					'pagination' => array(
+						'pageSize' => $page_size,
+					),
+			)
+			);
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
