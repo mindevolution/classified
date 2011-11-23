@@ -1,9 +1,4 @@
 <?php
-$this->menu = array(
-	array('label' => 'Create Job', 'url' => array('create')),
-	array('label' => 'Manage Job', 'url' => array('admin')),
-);
-
 $areas_menu = array(
 	// set the all area menu category
 	array(
