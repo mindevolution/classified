@@ -1,10 +1,10 @@
 <div class="job-board">
 	<div class="menu-r">
 		<div class="more"><a href="#">&nbsp;</a></div>
-		<a href="#">工作即時貼</a>
+		<?php echo CHtml::link(Yii::t('jobs', 'Micro jobs'), CController::createUrl('microjob/index')); ?>
 	</div>
 	<?php foreach($list as $row): ?>
-	<p><?php echo CHtml::link($row->description, '#'); ?></p>
+	<p><?php echo CHtml::link(CHtml::encode($row->description), CController::createUrl('microjob/view', array('id'=>$row->id))); ?></p>
 	<?php endforeach; ?>
 	<?php
 	$form = $this->beginWidget('MicroblogWidget');
