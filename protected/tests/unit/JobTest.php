@@ -28,6 +28,7 @@ define('PURPOSE_NAME', '請人');
 class JobTest extends CTestCase
 {
 	function testJobData() {
+		$number = 12;
 		Job::model()->deleteAll();
 		$this->assertEquals(0, Job::model()->count());
 
@@ -38,7 +39,7 @@ class JobTest extends CTestCase
 		);
 		$areas_id = array(1,2,3,7,8,28,29,30,32);
 		
-		for($id=1; $id < 10; $id++) {
+		for($id=1; $id < $number; $id++) {
 			$job = new Job;
 			$job->id = $id;
 			$job->description = 'Great job';
