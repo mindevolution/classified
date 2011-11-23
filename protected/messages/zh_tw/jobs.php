@@ -9,4 +9,5 @@ return array(
     'Get a new code' => '刷新',
     'Input verify code' => '請輸入驗證碼',
 	'Description' => '描述',
+    'Micro jobs' => '工作即時貼',
 );

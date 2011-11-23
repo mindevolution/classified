@@ -1,1 +1,0 @@
-{summary}{sorter}{items}{pager}
