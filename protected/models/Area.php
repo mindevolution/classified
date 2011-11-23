@@ -106,12 +106,35 @@ class Area extends CActiveRecord
 			'order' => 'weight asc',
 		);
 		$data = self::model()->findAll($options);
-//		$rows = array('0' => 'Root');
 		$rows = array();
 		foreach($data as $i => $row) {
 			$rows[$row['aid']] = $row['name'];
 		}
 		return $rows;
+	}
+
+	/**
+	 * Get the menu array account to the data array and the base url
+	 * @param array $areas
+	 * @param string $url
+	 * @return array 
+	 */
+	static public function getAreasMenu($areas, $url = 'job/index/') {
+		$areas_menu = array(
+		// set the all area menu category
+		array(
+			'label' => Yii::t('jobs', 'All areas'),
+			'url' => array('job/index'),
+			'active' => isset($_GET['aid']) ? false : true, // set to active when select all
+			),
+		);
+		foreach ($areas as $id => $name) {
+			$areas_menu[] = array(
+				'label' => $name,
+			    'url' => array($url, 'aid' => $id),
+			);
+		}
+		return $areas_menu;
 	}
 
 	function getAreaNameByPk($aid) {
