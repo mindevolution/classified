@@ -237,11 +237,17 @@ class JobController extends JController
 						'pageSize' => $page_size,
 					),
 			));
+		$options = array(
+			'order' => 'id desc',
+			'limit'=>3,
+		);
+		$microjobs = Microjob::model()->findAll($options);
 		$this->render('index', array(
 			'dataProvider' => $dataProvider,
 			'areas' => Area::getAreasByPid(0),
 			'pageSize' => $page_size,
 		    	'microjob' => new Microjob,
+		    	'list' => $microjobs,
 		));
 	}
 

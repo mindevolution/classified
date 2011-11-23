@@ -80,7 +80,7 @@ $this->widget('zii.widgets.CListView', array(
 <div id="right-part">
 	<?php echo $this->renderPartial('right/_tag_cloud'); ?>
 	<?php echo $this->renderPartial('right/_job_joy'); ?>
-	<?php echo $this->renderPartial('right/_job_board', array('model'=>$microjob)); ?>
+	<?php echo $this->renderPartial('right/_job_board', array('model'=>$microjob, 'list' => $list)); ?>
 	<?php echo $this->renderPartial('right/_interactive_and_info'); ?>
 </div>
 <!--right-part end-->

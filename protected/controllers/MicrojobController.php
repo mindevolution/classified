@@ -98,7 +98,9 @@ class MicrojobController extends Controller
 			if($_POST['Microjob']['description'] == Yii::t('jobs', 	'One word to find job')) {
 				$_POST['Microjob']['description'] = '';
 			}
+			$_POST['Microjob']['timestamp'] = date( 'Y-m-d H:i:s');
 			$model->attributes=$_POST['Microjob'];
+
 			if($model->save()) {
 //				$this->redirect(array('view','id'=>$model->id));
 				echo "success";

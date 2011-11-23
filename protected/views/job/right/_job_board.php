@@ -3,9 +3,9 @@
 		<div class="more"><a href="#">&nbsp;</a></div>
 		<a href="#">工作即時貼</a>
 	</div>
-	<p><a href="#">曼哈頓中城旺店請手法按摩好年輕按摩師一名另招學員學成留店請電718-503-4797</a></p>
-	<p><a href="#">曼哈頓中城旺店請手法按摩好年輕按摩師一名另招學員學成留店請電718-503-4797</a></p>
-	<p><a href="#">曼哈頓中城旺店請手法按摩好年輕按摩師一名另招學員學成留店請電718-503-4797</a></p>
+	<?php foreach($list as $row): ?>
+	<p><?php echo CHtml::link($row->description, '#'); ?></p>
+	<?php endforeach; ?>
 	<?php
 	$form = $this->beginWidget('MicroblogWidget');
 	$this->endWidget();
