@@ -58,7 +58,7 @@ class JobController extends JController
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionView($id)
+	public function actionView($id, $aid = null)
 	{
 		// set the job list main menu status to active when in the job detail page
 		Yii::app()->params['show_job_main_menu'] = true;
@@ -74,11 +74,40 @@ class JobController extends JController
 				$messages .= '<div class="flash-' . $key . '">' . $message . "</div>\n";
 			}
 		}
+
+		// get the related jobs
+		$page_size = 10;
+		$criteria = new CDbCriteria;
+		if ($aid) {
+			$criteria->condition = 'aid=' . $aid;
+		}
+		$dataProvider = new CActiveDataProvider('Job',
+				array(
+					'criteria' => array(
+						'condition' => $criteria->condition,
+						'order' => 'id DESC',
+					),
+					'pagination' => array(
+						'pageSize' => $page_size,
+					),
+			));
+		$options = array(
+			'order' => 'id desc',
+			'limit'=>3,
+		);
+		$microjobs = Microjob::model()->findAll($options);
+
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 			'nextJob'=>$nextJob,
 			'prevJob'=>$prevJob,
 		    	'messages'=>$messages,
+
+			'dataProvider' => $dataProvider,
+			'areas' => Area::getAreasByPid(0),
+			'pageSize' => $page_size,
+		    	'microjob' => new Microjob,
+		    	'list' => $microjobs,
 		));
 	}
 
@@ -223,31 +252,37 @@ class JobController extends JController
 	public function actionIndex($aid = null)
 	{
 		$page_size = 10;
+
+		// Fetch the area data
+		$areas = Area::getAreasByPid(Area::PID_ROOT);
+		$areas_menu = Area::getAreasMenu($areas);
+
+		// Fetch the job list
 		$criteria = new CDbCriteria;
 		if ($aid) {
 			$criteria->condition = 'aid=' . $aid;
 		}
-		$dataProvider = new CActiveDataProvider('Job',
-				array(
+
+		$dataProvider = new CActiveDataProvider('Job', array(
 					'criteria' => array(
 						'condition' => $criteria->condition,
-						'order' => 'id DESC',
-					),
+						'order' => 'id DESC',),
 					'pagination' => array(
-						'pageSize' => $page_size,
-					),
-			));
-		$options = array(
+						'pageSize' => $page_size,),
+		));
+
+		// Fetch the micro job list
+		$microjobs = Microjob::model()->findAll(array(
 			'order' => 'id desc',
 			'limit'=>3,
-		);
-		$microjobs = Microjob::model()->findAll($options);
+		));
+
 		$this->render('index', array(
 			'dataProvider' => $dataProvider,
-			'areas' => Area::getAreasByPid(0),
 			'pageSize' => $page_size,
 		    	'microjob' => new Microjob,
 		    	'list' => $microjobs,
+		    	'areas_menu' => $areas_menu,
 		));
 	}
 
